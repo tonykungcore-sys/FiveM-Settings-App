@@ -1,0 +1,15 @@
+<Application x:Class="FiveMSettingsApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!-- Dark Theme Colors -->
+        <SolidColorBrush x:Key="BackgroundColor">#1a1a1a</SolidColorBrush>
+        <SolidColorBrush x:Key="SidebarColor">#0f0f0f</SolidColorBrush>
+        <SolidColorBrush x:Key="CardColor">#2a2a2a</SolidColorBrush>
+        <SolidColorBrush x:Key="TextColor">#ffffff</SolidColorBrush>
+        <SolidColorBrush x:Key="SecondaryTextColor">#a0a0a0</SolidColorBrush>
+        <SolidColorBrush x:Key="AccentColor">#00d4ff</SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonHoverColor">#3a3a3a</SolidColorBrush>
+    </Application.Resources>
+</Application>
