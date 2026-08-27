@@ -1,0 +1,76 @@
+<Window x:Class="FiveMSettingsApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FiveM Settings v1.1" Height="600" Width="1000"
+        Background="{StaticResource BackgroundColor}"
+        Foreground="{StaticResource TextColor}"
+        WindowStartupLocation="CenterScreen"
+        Icon="Resources/icon.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <StackPanel Grid.Column="0" Background="{StaticResource SidebarColor}" Margin="0">
+            <Border Background="#1a1a1a" Padding="15" Margin="0,0,0,20">
+                <StackPanel>
+                    <Image Source="Resources/logo.png" Height="50" Width="50" Margin="0,0,0,10"/>
+                    <TextBlock Text="FiveM Settings" FontSize="18" FontWeight="Bold" Foreground="{StaticResource TextColor}"/>
+                    <TextBlock Text="v1.1" FontSize="12" Foreground="{StaticResource SecondaryTextColor}" Margin="0,5,0,0"/>
+                    <TextBlock Text="● Active" FontSize="11" Foreground="#00ff00" Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Menu Items -->
+            <Button x:Name="DashboardBtn" Click="DashboardBtn_Click" Style="{StaticResource MenuButtonStyle}" Content="Dashboard"/>
+            <TextBlock Text="TUNING" FontSize="10" Foreground="{StaticResource SecondaryTextColor}" Margin="15,20,15,10" FontWeight="Bold"/>
+            <Button x:Name="ApplicationsBtn" Click="ApplicationsBtn_Click" Style="{StaticResource MenuButtonStyle}" Content="Applications"/>
+            <Button x:Name="PowerplanBtn" Click="PowerplanBtn_Click" Style="{StaticResource MenuButtonStyle}" Content="Powerplan"/>
+            
+            <TextBlock Text="FIVEM" FontSize="10" Foreground="{StaticResource SecondaryTextColor}" Margin="15,20,15,10" FontWeight="Bold"/>
+            <Button x:Name="FiveMLauncherBtn" Click="FiveMLauncherBtn_Click" Style="{StaticResource MenuButtonStyle}" Content="FiveM Settings"/>
+            <Button x:Name="AudioSettingsBtn" Click="AudioSettingsBtn_Click" Style="{StaticResource MenuButtonStyle}" Content="Audio Settings"/>
+            <Button x:Name="GraphicsBtn" Click="GraphicsBtn_Click" Style="{StaticResource MenuButtonStyle}" Content="Graphics"/>
+            <Button x:Name="GameSettingsBtn" Click="GameSettingsBtn_Click" Style="{StaticResource MenuButtonStyle}" Content="Game Settings"/>
+
+            <TextBlock Text="SYSTEM" FontSize="10" Foreground="{StaticResource SecondaryTextColor}" Margin="15,20,15,10" FontWeight="Bold"/>
+            <Button x:Name="NetworkBtn" Click="NetworkBtn_Click" Style="{StaticResource MenuButtonStyle}" Content="Network"/>
+            <Button x:Name="MotherboardBtn" Click="MotherboardBtn_Click" Style="{StaticResource MenuButtonStyle}" Content="Motherboard"/>
+        </StackPanel>
+
+        <!-- Main Content -->
+        <ScrollViewer Grid.Column="1" Background="{StaticResource BackgroundColor}">
+            <StackPanel x:Name="ContentPanel" Margin="20">
+                <!-- Will be populated by button clicks -->
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+    <Window.Resources>
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+            <Setter Property="Padding" Value="15,12"/>
+            <Setter Property="Margin" Value="10,5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource ButtonHoverColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+</Window>
